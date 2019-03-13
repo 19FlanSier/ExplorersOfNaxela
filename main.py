@@ -246,10 +246,6 @@ print("\n This is the ammount of weight you have " + str(TWeight) + "\n This is 
 print("Before you leave you go to the store to get supplies")
 storeinformation = " 1. water 5 Units \n 2. food 6 Units \n 3. sample Containers 15 Units \n 4. Upgrade/Buy Mele Weapon 20 Units \n 5. Upgrade/Buy Ranged Weapon 20 Units \n 6. Repair Kit 30 Units \n 7. Upgrade Ship 25 Units \n Type a 'Done' when finished \n"
 
-storeinformation2 = " 1. water 5 Units \n 2. food 6 Units \n 3. sample Containers 15 Units \n 4. Upgrade Mele Weapon 40 Units \n 5. Upgrade Ranged Weapon 40 Units \n 6. Repair Kit 75 Units \n Type a 'Done' when finished \n"
-
-storeinformation3 = "1. water 5 Units \n 2. food 6 Units \n 3. sample Containers 15 Units \n 4. Mele Weapon 60 Units \n 5. Ranged Weapon 60 Units \n 6. Repair Kit 75 Units \n Type a 'Done' when finished \n"
-
 Information = print(" Total Weight = " + str(TWeight) + "\n Carrying Weight = " + str(Cweight))
 
 done = False
