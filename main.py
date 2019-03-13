@@ -1,6 +1,4 @@
 
-#Change the ranged and mele meapons to only have 1 and you upgrade it
-
 import random
 
 days = 0
