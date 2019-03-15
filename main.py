@@ -6,41 +6,41 @@ import random
 days = 0
 alive = 1
 
-Cweight = 100
-Currency = 100
+carryWeight = 100
+currency = 100
 sampleW = .5
 foodW = 3
 waterW = 3
-MeleW = 7
-RepairW = 5
-ProbeW = 20
-ADroneW = 15
-RDroneW = 15
-HDroneW = 5
-RangedW = 5
+meleeW = 7
+repairW = 5
+probeW = 20
+aDroneW = 15
+rDroneW = 15
+hDroneW = 5
+rangedW = 5
 
-Crew = 2
+crew = 2
 sampleC = 3
 sample = 0
 food = 0
 water = 0
-Mele = 0
-Repair = 0
-Probe = 0
-ADrone = 0
-HDrone = 0
-RDrone = 0
-Ranged = 0
+melee = 0
+repair = 0
+probe = 0
+aDrone = 0
+hDrone = 0
+rDrone = 0
+ranged = 0
 
 #Ship health
-ShipA = 25
-ShipD = 10
-ShipH = 100
+shipA = 25
+shipD = 10
+shipH = 100
 
 #Damage
-DMele = 0
-DRanged = 0
-DADrone = 3
+dMelee = 0
+dRanged = 0
+daDrone = 3
 
 health = 100
 
@@ -62,7 +62,7 @@ waterConsumtion = 0
 
 if health <= 0 :
   alive = 0
-if ShipH <= 0 :
+if shipH <= 0 :
   alive = 0
 
 #Enemy Stats
@@ -108,7 +108,7 @@ VraixDamageMele = 1
 VraixDamageRanged = 1
 
 
-RaceInformation = "Zorke: \n Weight = 15N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Foraging for food  \n Disadvantages: \n Lack of social skills with Flaris \n \n Hoste:  \n Weight = 20N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Physical strength (Mele) \n Heat/ Fire \n Better social skills with other Zorke \n Disadvantages: \n Social with other species \n \n Flaris:  \n Weight = 15N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Fire/ Hot Temperature \n Metal work (repair)  \n Disadvantages: \n Lack of social skills with Zorke \n Cold \n \n Vraix:  \n Weight = 10N \n No need for food consumption \n  Consumes water every day \n Abilities: \n Camouflage (Sneak) \n Better communications \n Better survival instincts \n Disadvantages: \n Weakness to fire \n \n"
+raceInformation = "Zorke: \n Weight = 15N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Foraging for food  \n Disadvantages: \n Lack of social skills with Flaris \n \n Hoste:  \n Weight = 20N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Physical strength (Mele) \n Heat/ Fire \n Better social skills with other Zorke \n Disadvantages: \n Social with other species \n \n Flaris:  \n Weight = 15N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Fire/ Hot Temperature \n Metal work (repair)  \n Disadvantages: \n Lack of social skills with Zorke \n Cold \n \n Vraix:  \n Weight = 10N \n No need for food consumption \n  Consumes water every day \n Abilities: \n Camouflage (Sneak) \n Better communications \n Better survival instincts \n Disadvantages: \n Weakness to fire \n \n"
 
 player = ""
 player = input('Enter your name: ')
@@ -146,12 +146,12 @@ while choose == 0:
     print("\n Congradulations " + player + "of the planet Zioria for being chosen to explore the planets in the outer areas of the galaxy. Watch out for the Flaris. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = -.3
     waterConsumtion = -.5
-    Planet = "Zioria"
-    Race = "Zorke"
-    CrewW = 15
+    planet = "Zioria"
+    race = "Zorke"
+    crewW = 15 # This should probably be declared outside of the loop.
     health += 25
-    DMele += 2
-    DRanged += 2
+    dMelee += 2
+    dRanged += 2
     skillsocial += 10
     skillstrength += 0
     skillheat += 0
@@ -168,12 +168,12 @@ while choose == 0:
     print("\n Congradulations " + player + "of the planet Chotanio for being chosen to explore the planets in the outer areas of the galaxy. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = -.2
     waterConsumtion = -.3
-    Planet = "Chontanio"
-    Race = "Hoste"
-    CrewW = 20
+    planet = "Chontanio"
+    race = "Hoste"
+    crewW = 20
     health += 50
-    DMele += 7
-    DRanged += 1
+    dMelee += 7
+    dRanged += 1
     skillsocial -= 10
     skillstrength += 25
     skillheat += 25
@@ -186,11 +186,11 @@ while choose == 0:
     print("\n Congradulations " + player + "of the planet Solla for being chosen to explore the planets in the outer areas of the galaxy. Watch out for the Zorke. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = -.3
     waterConsumtion = -.5
-    Planet = "Solla"
-    Race = "Flaris"
-    DMele += 2
-    DRanged += 4
-    CrewW = 15
+    planet = "Solla"
+    race = "Flaris"
+    dMelee += 2
+    dRanged += 4
+    crewW = 15
     health += 25
     skillsocial += 0
     skillstrength += 0
@@ -208,11 +208,11 @@ while choose == 0:
     print("\n Congradulations " + player + "of the planet Gryke 56 for being chosen to explore the planets in the outer areas of the galaxy. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = 0
     waterConsumtion = -1
-    Planet = "Gryke 56"
-    Race = "Vraix"
-    CrewW = 10
-    DMele += 1
-    DRanged += 2
+    planet = "Gryke 56"
+    race = "Vraix"
+    crewW = 10
+    dMelee += 1
+    dRanged += 2
     skillsocial += 40
     skillstrength -= 20
     skillheat += 30
@@ -233,15 +233,15 @@ while choose == 0:
 
  
 
-TWeight = ((sample * sampleW) + (food * foodW) + (water * waterW) + (Mele * MeleW) + (Repair * RepairW) +(Probe * ProbeW) + (ADrone * ADroneW) + (RDrone * RDrone) + (HDrone * HDroneW) + (Ranged * RangedW) + (Crew * CrewW))    
+totalWeight = ((sample * sampleW) + (food * foodW) + (water * waterW) + (melee * meleeW) + (repair * repairW) +(probe * probeW) + (aDrone * aDroneW) + (rDrone * rDrone) + (hDrone * hDroneW) + (ranged * rangedW) + (crew * crewW))    
 
 print("\n As you find yourslef preparing to leave your home planet you are given 100 Units to buy materials for your adventure. \n Along with this you are given one crew member of your race, three sample containers. You must have a continer to collect samples \n \n")
 
-CharacterInformation = " Planet = " + Planet + "\n Race = " + Race + " \n Currency = " + str(Currency) + " Units \n sample Containers = " + str(sampleC) +" \n Carrying Limit = " + str(Cweight) + "\n Carrying Weight = " + str(CrewW) + "N \n \n"
+characterInformation = " Planet = " + planet + "\n Race = " + race + " \n Currency = " + str(currency) + " Units \n sample Containers = " + str(sampleC) +" \n Carrying Limit = " + str(carryWeight) + "\n Carrying Weight = " + str(crewW) + "N \n \n"
 
-print(RaceInformation)
-print(CharacterInformation)
-print("\n This is the ammount of weight you have " + str(TWeight) + "\n This is the ammount of weight you can carry " + str(Cweight) + "\n \n")
+print(raceInformation)
+print(characterInformation)
+print("\n This is the ammount of weight you have " + str(totalWeight) + "\n This is the ammount of weight you can carry " + str(carryWeight) + "\n \n")
 
 print("Before you leave you go to the store to get supplies")
 storeinformation = " 1. water 5 Units \n 2. food 6 Units \n 3. sample Containers 15 Units \n 4. Upgrade/Buy Mele Weapon 20 Units \n 5. Upgrade/Buy Ranged Weapon 20 Units \n 6. Repair Kit 30 Units \n 7. Upgrade Ship 25 Units \n Type a 'Done' when finished \n"
@@ -250,63 +250,63 @@ storeinformation2 = " 1. water 5 Units \n 2. food 6 Units \n 3. sample Container
 
 storeinformation3 = "1. water 5 Units \n 2. food 6 Units \n 3. sample Containers 15 Units \n 4. Mele Weapon 60 Units \n 5. Ranged Weapon 60 Units \n 6. Repair Kit 75 Units \n Type a 'Done' when finished \n"
 
-Information = print(" Total Weight = " + str(TWeight) + "\n Carrying Weight = " + str(Cweight))
+information = print(" Total Weight = " + str(totalWeight) + "\n Carrying Weight = " + str(carryWeight))
 
 done = False
 store = ""
 
 while not done:
-    print("Currency: {}".format(Currency))
+    print("Currency: {}".format(currency))
     print("water: {}".format(water))
     print("food: {}".format(food))
     print("sample Containers: {}".format(sampleC))
-    print("Mele Weapon Damage: {}".format(Mele))
-    print("Mele Weapon Damage: {}".format(Ranged))
-    print("Repair Kit: {}".format(Repair))
-    print("Ship Health: {}".format(ShipH))
-    print("Ship Damage: {}".format(ShipA))
-    print("Ship Defense: {}".format(ShipD))
+    print("Mele Weapon Damage: {}".format(melee))
+    print("Mele Weapon Damage: {}".format(ranged))
+    print("Repair Kit: {}".format(repair))
+    print("Ship Health: {}".format(shipH))
+    print("Ship Damage: {}".format(shipA))
+    print("Ship Defense: {}".format(shipD))
     print(storeinformation)
     store = input("Select an item: ")
     if store == "1":
         print("Chose {}".format(store))
-        Currency -= 5
+        currency -= 5
         water += 1
     elif store == "2" :
         print("Chose {}".format(store))
-        Currency -= 6 
+        currency -= 6 
         food += 1
     elif store == "3" :
         print("Chose {}".format(store))
-        Currency -= 15
+        currency -= 15
         sample += 1
     elif store == "4" :
         print("Chose {}".format(store))
-        Currency -= 20
-        Mele += 1  
-        DMele += 4
+        currency -= 20
+        melee += 1  
+        dMelee += 4
     elif store == "5" :
         print("Chose {}".format(store))
-        Currency -= 20
-        Ranged += 1
-        DRanged += 4
+        currency -= 20
+        ranged += 1
+        dRanged += 4
     elif store == "6" :
         print("Chose {}".format(store))
-        Currency -= 30
-        Repair += 1
+        currency -= 30
+        repair += 1
     elif store == "7" :
         print("Chose {}".format(store))
-        Currency -= 25
-        ShipH += 10
-        ShipD += 5
-        ShipA += 10
+        currency -= 25
+        shipH += 10
+        shipD += 5
+        shipA += 10
     elif store == "Done":
         print("Chose {}".format(store))
         break
     else:
         print("Invalid")
 
-print(CharacterInformation)
+print(characterInformation)
 
 while alive == 1 and sample <= 10:
     r = random.randint(1,20)
@@ -316,50 +316,50 @@ while alive == 1 and sample <= 10:
         print ("You find a traveling merchant would you like to purchase his items \n type 'yes' or 'no'")
         answer = ""
         answer = input()
-        print("Currency: {}".format(Currency))
+        print("Currency: {}".format(currency))
         print("water: {}".format(water))
         print("food: {}".format(food))
         print("sample Containers: {}".format(sampleC))
-        print("Mele Weapon Damage: {}".format(Mele))
-        print("Mele Weapon Damage: {}".format(Ranged))
-        print("Repair Kit: {}".format(Repair))
-        print("Ship Health: {}".format(ShipH))
-        print("Ship Damage: {}".format(ShipA))
-        print("Ship Defense: {}".format(ShipD))
+        print("Mele Weapon Damage: {}".format(melee))
+        print("Mele Weapon Damage: {}".format(ranged))
+        print("Repair Kit: {}".format(repair))
+        print("Ship Health: {}".format(shipH))
+        print("Ship Damage: {}".format(shipA))
+        print("Ship Defense: {}".format(shipD))
         print(storeinformation)
         store = input("Select an item: ")
         if store == "1":
           print("Chose {}".format(store))
-          Currency -= 5
+          currency -= 5
           water += 1
         elif store == "2" :
           print("Chose {}".format(store))
-          Currency -= 6 
+          currency -= 6 
           food += 1
         elif store == "3" :
           print("Chose {}".format(store))
-          Currency -= 15
+          currency -= 15
           sample += 1
         elif store == "4" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Mele += 1  
-          DMele += 4
+          currency -= 20
+          melee += 1  
+          dMelee += 4
         elif store == "5" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Ranged += 1
-          DRanged += 4
+          currency -= 20
+          ranged += 1
+          dRanged += 4
         elif store == "6" :
           print("Chose {}".format(store))
-          Currency -= 30
-          Repair += 1
+          currency -= 30
+          repair += 1
         elif store == "7" :
           print("Chose {}".format(store))
-          Currency -= 25
-          ShipH += 10
-          ShipD += 5
-          ShipA += 10
+          currency -= 25
+          shipH += 10
+          shipD += 5
+          shipA += 10
         elif store == "Done":
           print("Chose {}".format(store))
           break
@@ -371,50 +371,50 @@ while alive == 1 and sample <= 10:
         print ("You find a traveling merchant would you like to purchase his items \n type 'yes' or 'no'")
         answer = ""
         answer = input()
-        print("Currency: {}".format(Currency))
+        print("Currency: {}".format(currency))
         print("water: {}".format(water))
         print("food: {}".format(food))
         print("sample Containers: {}".format(sampleC))
-        print("Mele Weapon Damage: {}".format(Mele))
-        print("Mele Weapon Damage: {}".format(Ranged))
-        print("Repair Kit: {}".format(Repair))
-        print("Ship Health: {}".format(ShipH))
-        print("Ship Damage: {}".format(ShipA))
-        print("Ship Defense: {}".format(ShipD))
+        print("Mele Weapon Damage: {}".format(melee))
+        print("Mele Weapon Damage: {}".format(ranged))
+        print("Repair Kit: {}".format(repair))
+        print("Ship Health: {}".format(shipH))
+        print("Ship Damage: {}".format(shipA))
+        print("Ship Defense: {}".format(shipD))
         print(storeinformation)
         store = input("Select an item: ")
         if store == "1":
           print("Chose {}".format(store))
-          Currency -= 5
+          currency -= 5
           water += 1
         elif store == "2" :
           print("Chose {}".format(store))
-          Currency -= 6 
+          currency -= 6 
           food += 1
         elif store == "3" :
           print("Chose {}".format(store))
-          Currency -= 15
+          currency -= 15
           sample += 1
         elif store == "4" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Mele += 1  
-          DMele += 4
+          currency -= 20
+          melee += 1  
+          dMelee += 4
         elif store == "5" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Ranged += 1
-          DRanged += 4
+          currency -= 20
+          ranged += 1
+          dRanged += 4
         elif store == "6" :
           print("Chose {}".format(store))
-          Currency -= 30
-          Repair += 1
+          currency -= 30
+          repair += 1
         elif store == "7" :
           print("Chose {}".format(store))
-          Currency -= 25
-          ShipH += 10
-          ShipD += 5
-          ShipA += 10
+          currency -= 25
+          shipH += 10
+          shipD += 5
+          shipA += 10
         elif store == "Done":
           print("Chose {}".format(store))
           break
@@ -426,50 +426,50 @@ while alive == 1 and sample <= 10:
         print ("You find a traveling merchant would you like to purchase his items \n type 'yes' or 'no'")
         answer = ""
         answer = input()
-        print("Currency: {}".format(Currency))
+        print("Currency: {}".format(currency))
         print("water: {}".format(water))
         print("food: {}".format(food))
         print("sample Containers: {}".format(sampleC))
-        print("Mele Weapon Damage: {}".format(Mele))
-        print("Mele Weapon Damage: {}".format(Ranged))
-        print("Repair Kit: {}".format(Repair))
-        print("Ship Health: {}".format(ShipH))
-        print("Ship Damage: {}".format(ShipA))
-        print("Ship Defense: {}".format(ShipD))
+        print("Mele Weapon Damage: {}".format(melee))
+        print("Mele Weapon Damage: {}".format(ranged))
+        print("Repair Kit: {}".format(repair))
+        print("Ship Health: {}".format(shipH))
+        print("Ship Damage: {}".format(shipA))
+        print("Ship Defense: {}".format(shipD))
         print(storeinformation)
         store = input("Select an item: ")
         if store == "1":
           print("Chose {}".format(store))
-          Currency -= 5
+          currency -= 5
           water += 1
         elif store == "2" :
           print("Chose {}".format(store))
-          Currency -= 6 
+          currency -= 6 
           food += 1
         elif store == "3" :
           print("Chose {}".format(store))
-          Currency -= 15
+          currency -= 15
           sample += 1
         elif store == "4" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Mele += 1  
-          DMele += 4
+          currency -= 20
+          melee += 1  
+          dMelee += 4
         elif store == "5" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Ranged += 1
-          DRanged += 4
+          currency -= 20
+          ranged += 1
+          dRanged += 4
         elif store == "6" :
           print("Chose {}".format(store))
-          Currency -= 30
-          Repair += 1
+          currency -= 30
+          repair += 1
         elif store == "7" :
           print("Chose {}".format(store))
-          Currency -= 25
-          ShipH += 10
-          ShipD += 5
-          ShipA += 10
+          currency -= 25
+          shipH += 10
+          shipD += 5
+          shipA += 10
         elif store == "Done":
           print("Chose {}".format(store))
           break
@@ -481,50 +481,50 @@ while alive == 1 and sample <= 10:
         print ("You find a traveling merchant would you like to purchase his items \n type 'yes' or 'no'")
         answer = ""
         answer = input()
-        print("Currency: {}".format(Currency))
+        print("Currency: {}".format(currency))
         print("water: {}".format(water))
         print("food: {}".format(food))
         print("sample Containers: {}".format(sampleC))
-        print("Mele Weapon Damage: {}".format(Mele))
-        print("Mele Weapon Damage: {}".format(Ranged))
-        print("Repair Kit: {}".format(Repair))
-        print("Ship Health: {}".format(ShipH))
-        print("Ship Damage: {}".format(ShipA))
-        print("Ship Defense: {}".format(ShipD))
+        print("Mele Weapon Damage: {}".format(melee))
+        print("Mele Weapon Damage: {}".format(ranged))
+        print("Repair Kit: {}".format(repair))
+        print("Ship Health: {}".format(shipH))
+        print("Ship Damage: {}".format(shipA))
+        print("Ship Defense: {}".format(shipD))
         print(storeinformation)
         store = input("Select an item: ")
         if store == "1":
           print("Chose {}".format(store))
-          Currency -= 5
+          currency -= 5
           water += 1
         elif store == "2" :
           print("Chose {}".format(store))
-          Currency -= 6 
+          currency -= 6 
           food += 1
         elif store == "3" :
           print("Chose {}".format(store))
-          Currency -= 15
+          currency -= 15
           sample += 1
         elif store == "4" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Mele += 1  
-          DMele += 4
+          currency -= 20
+          melee += 1  
+          dMelee += 4
         elif store == "5" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Ranged += 1
-          DRanged += 4
+          currency -= 20
+          ranged += 1
+          dRanged += 4
         elif store == "6" :
           print("Chose {}".format(store))
-          Currency -= 30
-          Repair += 1
+          currency -= 30
+          repair += 1
         elif store == "7" :
           print("Chose {}".format(store))
-          Currency -= 25
-          ShipH += 10
-          ShipD += 5
-          ShipA += 10
+          currency -= 25
+          shipH += 10
+          shipD += 5
+          shipA += 10
         elif store == "Done":
           print("Chose {}".format(store))
           break
@@ -536,50 +536,50 @@ while alive == 1 and sample <= 10:
         print ("You find a traveling merchant would you like to purchase his items \n type 'yes' or 'no'")
         answer = ""
         answer = input()
-        print("Currency: {}".format(Currency))
+        print("Currency: {}".format(currency))
         print("water: {}".format(water))
         print("food: {}".format(food))
         print("sample Containers: {}".format(sampleC))
-        print("Mele Weapon Damage: {}".format(Mele))
-        print("Mele Weapon Damage: {}".format(Ranged))
-        print("Repair Kit: {}".format(Repair))
-        print("Ship Health: {}".format(ShipH))
-        print("Ship Damage: {}".format(ShipA))
-        print("Ship Defense: {}".format(ShipD))
+        print("Mele Weapon Damage: {}".format(melee))
+        print("Mele Weapon Damage: {}".format(ranged))
+        print("Repair Kit: {}".format(repair))
+        print("Ship Health: {}".format(shipH))
+        print("Ship Damage: {}".format(shipA))
+        print("Ship Defense: {}".format(shipD))
         print(storeinformation)
         store = input("Select an item: ")
         if store == "1":
           print("Chose {}".format(store))
-          Currency -= 5
+          currency -= 5
           water += 1
         elif store == "2" :
           print("Chose {}".format(store))
-          Currency -= 6 
+          currency -= 6 
           food += 1
         elif store == "3" :
           print("Chose {}".format(store))
-          Currency -= 15
+          currency -= 15
           sample += 1
         elif store == "4" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Mele += 1  
-          DMele += 4
+          currency -= 20
+          melee += 1  
+          dMelee += 4
         elif store == "5" :
           print("Chose {}".format(store))
-          Currency -= 20
-          Ranged += 1
-          DRanged += 4
+          currency -= 20
+          ranged += 1
+          dRanged += 4
         elif store == "6" :
           print("Chose {}".format(store))
-          Currency -= 30
-          Repair += 1
+          currency -= 30
+          repair += 1
         elif store == "7" :
           print("Chose {}".format(store))
-          Currency -= 25
-          ShipH += 10
-          ShipD += 5
-          ShipA += 10
+          currency -= 25
+          shipH += 10
+          shipD += 5
+          shipA += 10
         elif store == "Done":
           print("Chose {}".format(store))
           break
@@ -595,10 +595,10 @@ while alive == 1 and sample <= 10:
         answer = input()
         if answer == "yes":
           print("As you approach the planet you start to make out more plants, would you like to land or leave?")
-          landleave = ""
+          landLeave = ""
           x = random.randint(1,100)
-          landleave = input() 
-          if landleave == "land" :
+          landLeave = input() 
+          if landLeave == "land" :
               print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
               ecs = ""
               ecs = input() 
@@ -633,10 +633,10 @@ while alive == 1 and sample <= 10:
         answer = input()
         if answer == "yes":
           print("As you approach the planet you start to make out more plants, would you like to land or leave?")
-          landleave = ""
+          landLeave = ""
           x = random.randint(1,100)
-          landleave = input() 
-          if landleave == "land" :
+          landLeave = input() 
+          if landLeave == "land" :
               print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
               ecs = ""
               ecs = input() 
@@ -671,10 +671,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -731,10 +731,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -791,10 +791,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes" :
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -851,10 +851,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -911,10 +911,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -971,10 +971,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -1031,10 +1031,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -1088,10 +1088,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship'")
             ecs = ""
             while ecs != "leave" :
@@ -1148,7 +1148,7 @@ while alive == 1 and sample <= 10:
         answer = input()
         if answer == "yes" :
           print("You succesfully take them back to their home planet, they give you 30 units for compensation")
-          Currency += 30
+          currency += 30
         if answer == "no" :
           break
 
@@ -1161,7 +1161,7 @@ while alive == 1 and sample <= 10:
         answer = input()
         if answer == "yes" :
           print("You succesfully take them back to their home planet, they give you 30 units for compensation")
-          Currency += 30
+          currency += 30
           break
         if answer == "no" :
           break
@@ -1175,7 +1175,7 @@ while alive == 1 and sample <= 10:
         answer = input()
         if answer == "yes" :
           print("You succesfully take them back to their home planet, they give you 30 units for compensation")
-          Currency += 30
+          currency += 30
           break
         if answer == "no" :
           break
@@ -1189,10 +1189,10 @@ while alive == 1 and sample <= 10:
       answer = input()
       if answer == "yes":
         print("As you approach the planet you start to make small huts but not any people, would you like to land or leave?")
-        landleave = ""
+        landLeave = ""
         x = random.randint(1,100)
-        landleave = input() 
-        if landleave == "land" :
+        landLeave = input() 
+        if landLeave == "land" :
             print("you land on the planet would you like to exit your vehical, send your crew member out, or have your ship take a sample. It is not garenteid your shap will get a valid sample. type 'exit, crew, or ship' for which you would like to send out for a sample")
             ecs = ""
             while ecs != "leave" :
