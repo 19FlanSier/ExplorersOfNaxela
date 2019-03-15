@@ -110,9 +110,9 @@ VraixDamageRanged = 1
 
 raceInformation = "Zorke: \n Weight = 15N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Foraging for food  \n Disadvantages: \n Lack of social skills with Flaris \n \n Hoste:  \n Weight = 20N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Physical strength (Mele) \n Heat/ Fire \n Better social skills with other Zorke \n Disadvantages: \n Social with other species \n \n Flaris:  \n Weight = 15N \n food consumption every 3 days \n water consumption every 2 days \n Abilities: \n Fire/ Hot Temperature \n Metal work (repair)  \n Disadvantages: \n Lack of social skills with Zorke \n Cold \n \n Vraix:  \n Weight = 10N \n No need for food consumption \n  Consumes water every day \n Abilities: \n Camouflage (Sneak) \n Better communications \n Better survival instincts \n Disadvantages: \n Weakness to fire \n \n"
 
-player = ""
-player = input('Enter your name: ')
-print ("\n Welcome to Andromeda " + player + "! You are an explorer from the planet... \n ")
+playerName = ""
+playerName = input('Enter your name: ')
+print ("\n Welcome to Andromeda " + playerName + "! You are an explorer from the planet... \n ")
 
 
 planet1 = "Zioria"
@@ -143,7 +143,7 @@ planetchoose = int(input('\n Please choose a planet, 1, 2, 3, or 4: '))
 choose = 0
 while choose == 0:
   if planetchoose == 1: 
-    print("\n Congradulations " + player + "of the planet Zioria for being chosen to explore the planets in the outer areas of the galaxy. Watch out for the Flaris. Your mission is to collect samples from 10 planets, we wish you good luck.")
+    print("\n Congradulations " + playerName + "of the planet Zioria for being chosen to explore the planets in the outer areas of the galaxy. Watch out for the Flaris. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = -.3
     waterConsumtion = -.5
     planet = "Zioria"
@@ -165,7 +165,7 @@ while choose == 0:
     skillsurvival += 35
     choose += 1
   elif planetchoose == 2: 
-    print("\n Congradulations " + player + "of the planet Chotanio for being chosen to explore the planets in the outer areas of the galaxy. Your mission is to collect samples from 10 planets, we wish you good luck.")
+    print("\n Congradulations " + playerName + "of the planet Chotanio for being chosen to explore the planets in the outer areas of the galaxy. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = -.2
     waterConsumtion = -.3
     planet = "Chontanio"
@@ -183,7 +183,7 @@ while choose == 0:
     skillsneak -= 15
     choose += 1
   elif planetchoose == 3: 
-    print("\n Congradulations " + player + "of the planet Solla for being chosen to explore the planets in the outer areas of the galaxy. Watch out for the Zorke. Your mission is to collect samples from 10 planets, we wish you good luck.")
+    print("\n Congradulations " + playerName + "of the planet Solla for being chosen to explore the planets in the outer areas of the galaxy. Watch out for the Zorke. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = -.3
     waterConsumtion = -.5
     planet = "Solla"
@@ -205,7 +205,7 @@ while choose == 0:
     skillsurvival += 35
     choose += 1
   elif planetchoose == 4: 
-    print("\n Congradulations " + player + "of the planet Gryke 56 for being chosen to explore the planets in the outer areas of the galaxy. Your mission is to collect samples from 10 planets, we wish you good luck.")
+    print("\n Congradulations " + playerName + "of the planet Gryke 56 for being chosen to explore the planets in the outer areas of the galaxy. Your mission is to collect samples from 10 planets, we wish you good luck.")
     foodConsumtion = 0
     waterConsumtion = -1
     planet = "Gryke 56"
